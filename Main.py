@@ -115,3 +115,5 @@ print("---")
 print("Varmeoverføring:", Q)
 print("---")
 
+ja
+
