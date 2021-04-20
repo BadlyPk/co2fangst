@@ -44,13 +44,12 @@ m4_guess = 50
 m6_guess = 100.3
 m8_guess = 100
 m9_guess = 30
-wc2_guess = 0.5
-wm2_guess = 0.5
+wc2_guess = 0.2
+wm2_guess = 0.2
 wm3_guess = 0.5
 wm4_guess = 0.5
-wo2_guess = 0.5
-wh2_guess = 0.5
-wn2_guess = 0.5
+wo2_guess = 0.3
+wh2_guess = 0.3
 
 m_guess = [m2_guess,m3_guess,m4_guess,m6_guess, m8_guess,m9_guess, wc2_guess,wh2_guess,wm2_guess,wm3_guess,wm4_guess,wo2_guess,wh2_guess]
 
