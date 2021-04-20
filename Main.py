@@ -105,6 +105,8 @@ H9 = m9*c.hf[0]
 H = [H1,H2,H3,H4,H5,H6,H7,H8,H9]
 h = [H1/c.m1,H2/m2,H3/m3,H4/m4,H5/m5,H6/m6,H7/m7,H8/m8,H9/m9]
 
-Qv = Qv3+H9+H6-H5
+Qv4 = Qv3+H9+H6-H5
 Q = [Qv1,Qv2,Qv3,Qv4]
+
+print(Q)
 
