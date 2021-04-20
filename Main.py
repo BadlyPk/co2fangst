@@ -33,7 +33,6 @@ m7 = m3
 m9 = m5-m6
 mt = c.m1
 
-#volumfraksjoner for strøm 2,4,5
 wc2 = c.m1*c.wc1*(1-c.wcapture)/m2
 wn2 = c.wn1*c.m1/m2
 wo2 = c.wo1*c.m1/m2
@@ -59,8 +58,6 @@ CO2abs_45 = wc4*m4/c.Mw[0]*1000
 Habs_45 = CO2abs_45*c.habs_m
 
 Qv1 = m4*CpSol.CpCO2Int(CpSol.CpCO2,c.T[3]+273.15,c.T[4]+273.15,wMEA4,wh4,wc4)
-
-
 
 def findT7(x_list):
     T7 = x_list[0]
@@ -108,5 +105,13 @@ h = [H1/c.m1,H2/m2,H3/m3,H4/m4,H5/m5,H6/m6,H7/m7,H8/m8,H9/m9]
 Qv4 = Qv3+H9+H6-H5
 Q = [Qv1,Qv2,Qv3,Qv4]
 
-print(Q)
+
+print("T7:", T7)
+print("---")
+print("Entalpi:", h)
+print("---")
+print("Masser:", m)
+print("---")
+print("Varmeoverføring:", Q)
+print("---")
 
