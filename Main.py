@@ -114,6 +114,3 @@ print("Masser:", m)
 print("---")
 print("Varmeoverføring:", Q)
 print("---")
-
-ja
-
