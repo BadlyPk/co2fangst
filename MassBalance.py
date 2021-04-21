@@ -1,3 +1,10 @@
+"""
+TKP4120 - Prosjekt CO2-fangst
+
+Gruppe 6 - Andrea Skog, Ståle Breimoen, Hanna Imsland Mo, Martin Pham. 
+
+"""
+
 import scipy.optimize
 import constants6 as c
 import WtFrac as WF

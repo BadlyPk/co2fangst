@@ -11,7 +11,7 @@ import scipy.optimize
 import constants6 as c
 import CpSol
 import Massebalanser as mb
-from Entalpi import enthalpy
+from Enthalpy import enthalpy
 from WtFrac import WtFrac
 
 wc3 = WtFrac(c.alpha3,c.Mw[0],c.MwMEA)
