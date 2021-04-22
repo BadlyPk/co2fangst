@@ -75,7 +75,7 @@ wo2_guess = 0.25
 m_guess = [m2_guess,m3_guess,m4_guess, m8_guess,m9_guess, wc2_guess,wh3_guess,wh4_guess,wm4_guess,wh2_guess,wn2_guess]
 
 sol = scipy.optimize.root(loser,m_guess)
-print(sol)
+# print(sol)
 
 losn = []
 for i in range(11):
