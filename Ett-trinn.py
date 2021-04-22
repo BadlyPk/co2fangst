@@ -8,17 +8,15 @@ Gruppe 6 - Andrea Skog, Ståle Breimoen, Hanna Imsland Mo, Martin Pham.
 import numpy as np
 import constants6 as c
 
+m9 = 84.63
 T_inn = 298
-MmCO2 = 44.01
 p_inn = 2
 p_ut = 20
 T_ut_slutt = 303
 p_ut_slutt = 20
 
-cpCO2 = (((c.cpg[0]*1000))/1000)*MmCO2
-m9 = 84.63
-R = 8.314
-gamma = cpCO2/(cpCO2-R)
+cpCO2 = (((c.cpg[0]*1000))/1000)*c.Mw[0]
+gamma = cpCO2/(cpCO2-c.gasConst)
 
 T_ut = T_inn*(p_ut/p_inn)**((gamma-1)/gamma)
 Ws_rev = m9*(c.cpg[0]*1000)*(T_ut-T_inn)
