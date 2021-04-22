@@ -8,9 +8,8 @@ Gruppe 6 - Andrea Skog, Ståle Breimoen, Hanna Imsland Mo, Martin Pham.
 import numpy as np
 import constants6 as c
 
-MmCO2 = 44.01
-cpCO2 = ((c.cpg[0])/1000)*MmCO2
 m9 = 84.63
+cpCO2 = (((c.cpg[0]*1000)))*c.Mw[0]
 gamma = cpCO2/(cpCO2-c.gasConst)
 
 #Første trinn
