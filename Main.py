@@ -20,9 +20,6 @@ wh3 = 1-wMEA3-wc3
 wc4 = WtFrac.wc4
 mt = c.m1
 
-# guess = [0,500,250,290]
-# mass = scipy.optimize.root(mb.balanser,guess)
-
 wMEA4 = mb.wm4
 m2 = mb.m2
 m3 = mb.m3
@@ -32,13 +29,13 @@ m6 = m3
 m7 = m3
 m9 = mb.m9
 
-wc2 = mb.wc2#c.m1*c.wc1*(1-c.wcapture)/m2
-wn2 = mb.wn2#c.wn1*c.m1/m2
-wo2 = mb.wo2#c.wo1*c.m1/m2
-wh2 = mb.wh2#1-wn2-wo2-wc2
-wh4 = mb.wh4#1-wMEA4-wc4
-wc8 = WtFrac.wc8#c.xc8*c.Mw[0]/(c.xc8*c.Mw[0]+(1-c.xc8)*c.Mw[1])
-m8 = mb.m8#m9/wc8
+wc2 = mb.wc2
+wn2 = mb.wn2
+wo2 = mb.wo2
+wh2 = mb.wh2
+wh4 = mb.wh4
+wc8 = WtFrac.wc8
+m8 = mb.m8
 
 m = [c.m1,m2,m3,m4,m5,m6,m7,m8,m9]
 
