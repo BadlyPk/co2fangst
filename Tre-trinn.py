@@ -24,7 +24,7 @@ Q_kjoler1 = m9*(c.cpg[0]*1000)*(T_inn1-To_real1)
 
 print("Første trinn:")
 print("Ws_real:", round(Ws_real1/1000,3), "kJ/s")
-print("Q_kjøler:", round(Q_kjoler1/1000,2), "kJ")
+print("Q_kjøler:", round(Q_kjoler1/1000,3), "kJ")
 print("---")
 
 #Andre trinn
@@ -39,7 +39,7 @@ Q_kjoler2 = m9*(c.cpg[0]*1000)*(T_inn2-To_real2)
 
 print("Andre trinn:")
 print("Ws_real:", round(Ws_real2/1000,3), "kJ/s")
-print("Q_kjøler:", round(Q_kjoler2/1000,2), "kJ")
+print("Q_kjøler:", round(Q_kjoler2/1000,3), "kJ")
 print("---")
 
 #Tredje trinn
@@ -54,5 +54,8 @@ Q_kjoler3 = m9*(c.cpg[0]*1000)*(T_inn3-To_real3)
 
 print("Tredje trinn:")
 print("Ws_real:", round(Ws_real3/1000,3), "kJ/s")
-print("Q_kjøler:", round(Q_kjoler3/1000,2), "kJ")
+print("Q_kjøler:", round(Q_kjoler3/1000,3), "kJ")
 print("---")
+print("Total:")
+print("Ws_real:", round((Ws_real1+Ws_real2+Ws_real3)/1000,3), "kJ/s")
+print("Q_kjøler:", round((Q_kjoler1+Q_kjoler2+Q_kjoler3)/1000,3), "kJ")

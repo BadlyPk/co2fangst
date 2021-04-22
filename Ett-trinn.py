@@ -15,7 +15,7 @@ p_ut = 20
 T_ut_slutt = 303
 p_ut_slutt = 20
 
-cpCO2 = (((c.cpg[0]*1000))/1000)*c.Mw[0]
+cpCO2 = (((c.cpg[0]*1000)))*c.Mw[0]
 gamma = cpCO2/(cpCO2-c.gasConst)
 
 T_ut = T_inn*(p_ut/p_inn)**((gamma-1)/gamma)
@@ -25,4 +25,4 @@ To_real = T_ut+(Ws_real/(m9*(c.cpg[0]*1000)))
 Q_kjoler = m9*(c.cpg[0]*1000)*(T_inn-To_real)
 
 print("Ws_real:", round(Ws_real/1000,3), "kJ/s")
-print("Q_kjøler:", round(Q_kjoler/1000,2), "kJ")
+print("Q_kjøler:", round(Q_kjoler/1000,3), "kJ")
