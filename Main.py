@@ -106,7 +106,7 @@ Qv4 = Qv3+H9+H6-H5
 Q = [Qv1,Qv2,Qv3,Qv4]
 
 
-print("T7:", T7)
+print("T7:", T7["x"])
 print("---")
 print("Entalpi:", h)
 print("---")
