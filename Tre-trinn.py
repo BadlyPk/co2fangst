@@ -9,7 +9,7 @@ import numpy as np
 import constants6 as c
 
 m9 = 84.63
-cpCO2 = (((c.cpg[0]*1000)))*c.Mw[0]
+cpCO2 = (((c.cpg[0]*1000)/1000))*c.Mw[0]
 gamma = cpCO2/(cpCO2-c.gasConst)
 
 #Første trinn

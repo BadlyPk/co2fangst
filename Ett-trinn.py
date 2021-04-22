@@ -16,7 +16,7 @@ p_ut = 20
 T_ut_slutt = 303
 p_ut_slutt = 20
 
-cpCO2 = (((c.cpg[0]*1000)))*c.Mw[0]
+cpCO2 = (((c.cpg[0]*1000)/1000))*c.Mw[0]
 gamma = cpCO2/(cpCO2-c.gasConst)
 
 T_ut = T_inn*(p_ut/p_inn)**((gamma-1)/gamma)
