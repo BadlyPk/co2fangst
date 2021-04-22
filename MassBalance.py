@@ -83,35 +83,35 @@ for i in range(11):
 
 m2,m3,m4,m8,m9,wc2,wh4,wm4,wh2,wn2,wo2 = losn
 
-print(
-    f"m1 = {c.m1}\n"
-    f"m2 = {m2}\n" 
-    f"m3 = {m3}\n"
-    f"m4 = {m4}\n"
-    f"m5 = {m4}\n"
-    f"m6 = {m3}\n"
-    f"m7 = {m3}\n"
-    f"m8 = {m8}\n"
-    f"m9 = {m9}\n"
+# print(
+#     f"m1 = {c.m1}\n"
+#     f"m2 = {m2}\n" 
+#     f"m3 = {m3}\n"
+#     f"m4 = {m4}\n"
+#     f"m5 = {m4}\n"
+#     f"m6 = {m3}\n"
+#     f"m7 = {m3}\n"
+#     f"m8 = {m8}\n"
+#     f"m9 = {m9}\n"
 
-    f"wc1 = {round(c.wc1,3)}\n"
-    f"wh1 = {round(c.wh1,3)}\n"
-    f"wn1 = {round(c.wn1,3)}\n"
-    f"wo1 = {round(c.wo1,3)}\n"
+#     f"wc1 = {round(c.wc1,3)}\n"
+#     f"wh1 = {round(c.wh1,3)}\n"
+#     f"wn1 = {round(c.wn1,3)}\n"
+#     f"wo1 = {round(c.wo1,3)}\n"
 
-    f"wc2 = {wc2}\n"
-    f"wh2 = {wh2}\n"
-    f"wn2 = {wn2}\n"
-    f"wo2 = {wo2}\n"
+#     f"wc2 = {wc2}\n"
+#     f"wh2 = {wh2}\n"
+#     f"wn2 = {wn2}\n"
+#     f"wo2 = {wo2}\n"
 
-    f"wc3 = {round(WF.wc3,3)}\n"
-    f"wm3 = {c.waMEA}\n"
-    f"wh3 = {round(1 - WF.wc3 - c.waMEA,3)}\n"
+#     f"wc3 = {round(WF.wc3,3)}\n"
+#     f"wm3 = {c.waMEA}\n"
+#     f"wh3 = {round(1 - WF.wc3 - c.waMEA,3)}\n"
     
-    f"wh4 = {wh4}\n"
-    f"wm4 = {wm4}\n"
-    f"wc4 = {round(WF.wc4,3)}\n"
+#     f"wh4 = {wh4}\n"
+#     f"wm4 = {wm4}\n"
+#     f"wc4 = {round(WF.wc4,3)}\n"
 
-    f"wc8 = {round(WF.wc8,3)}\n"
-    f"wh8 = {round(1-WF.wc8,3)}\n"
-)
+#     f"wc8 = {round(WF.wc8,3)}\n"
+#     f"wh8 = {round(1-WF.wc8,3)}\n"
+# )
