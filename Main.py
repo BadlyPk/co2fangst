@@ -10,36 +10,35 @@ import scipy.integrate
 import scipy.optimize
 import constants6 as c
 import CpSol
-import Massebalanser as mb
+import MassBalance as mb
 from Enthalpy import enthalpy
-from WtFrac import WtFrac
+import WtFrac
 
-wc3 = WtFrac(c.alpha3,c.Mw[0],c.MwMEA)
+wc3 = WtFrac.wc3
 wMEA3 = c.waMEA
 wh3 = 1-wMEA3-wc3
-wc4 = WtFrac(c.alpha4,c.Mw[0],c.MwMEA)
+wc4 = WtFrac.wc4
 mt = c.m1
 
-guess = [0,500,250,290]
-mass = scipy.optimize.root(mb.balanser,guess)
+# guess = [0,500,250,290]
+# mass = scipy.optimize.root(mb.balanser,guess)
 
-wMEA4 = mass.x[0]
-m2 = mass.x[1]
-m3 = mass.x[2]
-m4 = mass.x[3]
+wMEA4 = mb.wm4
+m2 = mb.m2
+m3 = mb.m3
+m4 = mb.m4
 m5 = m4
 m6 = m3
 m7 = m3
-m9 = m5-m6
-mt = c.m1
+m9 = mb.m9
 
-wc2 = c.m1*c.wc1*(1-c.wcapture)/m2
-wn2 = c.wn1*c.m1/m2
-wo2 = c.wo1*c.m1/m2
-wh2 = 1-wn2-wo2-wc2
-wh4 = 1-wMEA4-wc4
-wc8 = c.xc8*c.Mw[0]/(c.xc8*c.Mw[0]+(1-c.xc8)*c.Mw[1])
-m8 = m9/wc8
+wc2 = mb.wc2#c.m1*c.wc1*(1-c.wcapture)/m2
+wn2 = mb.wn2#c.wn1*c.m1/m2
+wo2 = mb.wo2#c.wo1*c.m1/m2
+wh2 = mb.wh2#1-wn2-wo2-wc2
+wh4 = mb.wh4#1-wMEA4-wc4
+wc8 = WtFrac.wc8#c.xc8*c.Mw[0]/(c.xc8*c.Mw[0]+(1-c.xc8)*c.Mw[1])
+m8 = mb.m8#m9/wc8
 
 m = [c.m1,m2,m3,m4,m5,m6,m7,m8,m9]
 
@@ -62,16 +61,8 @@ Qv1 = m4*CpSol.CpCO2Int(CpSol.CpCO2,c.T[3]+273.15,c.T[4]+273.15,wMEA4,wh4,wc4)
 def findT7(x_list):
     T7 = x_list[0]
     TO = c.T[5]+273.15
-    
     wMEA = c.waMEA
-    
-    subeq1 = (1-wMEA)*(c.Aw*(T7-TO)+(1/2)*c.Bw*(T7**2-TO**2)+(1/3)*c.Cw*(T7**3-TO**3))
-    subeq2 = wMEA*(c.Aa*(T7-TO)+(1/2)*c.Ba*(T7**2-TO**2)+(1/3)*c.Ca*(T7**3-TO**3))
-    subeq3 = wMEA*(1-wMEA)*(c.As*(T7-TO)+(1/2)*c.Bs*(T7**2-TO**2)-1.589*c.Cs*wMEA*(T7-273.15)**(-0.5859))
-    subeq4 = wc3*(c.Ac*(T7-TO)+(1/2)*c.Bc*(T7**2-TO**2))
-    
-    toteq = m3*((wMEA+wh3)*(subeq1+subeq2+subeq3)+subeq4) + Qv1
-    return toteq
+    return m3*((wMEA+wh3)*((1-wMEA)*(c.Aw*(T7-TO)+(1/2)*c.Bw*(T7**2-TO**2)+(1/3)*c.Cw*(T7**3-TO**3))+wMEA*(c.Aa*(T7-TO)+(1/2)*c.Ba*(T7**2-TO**2)+(1/3)*c.Ca*(T7**3-TO**3))+wMEA*(1-wMEA)*(c.As*(T7-TO)+(1/2)*c.Bs*(T7**2-TO**2)-1.589*c.Cs*wMEA*(T7-273.15)**(-0.5859)))+wc3*(c.Ac*(T7-TO)+(1/2)*c.Bc*(T7**2-TO**2))) + Qv1
 
 T69 = 420
 T7 = scipy.optimize.root(findT7,T69)
