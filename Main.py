@@ -53,7 +53,7 @@ Habs_367 = CO2abs_367*c.habs_m
 CO2abs_45 = wc4*m4/c.Mw[0]*1000
 Habs_45 = CO2abs_45*c.habs_m
 
-Qv1 = m4*CpSol.CpCO2Int(CpSol.CpCO2,c.T[3]+273.15,c.T[4]+273.15,wMEA4,wh4,wc4)
+Qv1 = m4* CpSol.CpCO2Int(CpSol.cpsol,c.T[3]+273,c.T[4]+273,wMEA4)
 
 def findT7(x_list):
     T7 = x_list[0]
@@ -75,11 +75,11 @@ H7 = enthalpy(c.Tref_C,c.T[6],c.waMEA,wc3,wh3,Habs_367,m3)
 dt_LN = ((c.T[6]-c.T[3])-(c.T[5]-c.T[4]))/np.log((c.T[6]-c.T[3])/(c.T[5]-c.T[4]))
 A = Qv1*1000/(dt_LN*c.U)
 
-Qv2 = m3*CpSol.CpCO2Int(CpSol.CpCO2,c.T[6]+273.15,c.T[2]+273.15,c.waMEA,wh3,wc3)
+Qv2 = m3*CpSol.CpCO2Int(CpSol.cpsol,c.T[6],c.T[2],c.waMEA)
 
-h_vap = c.dHfus-c.dHsub
+h_vap = c.dHsub -c.dHfus
 wh8 = 1-wc8
-Qv3 = m8*(-h_vap*wh8-wh8*c.cpg[1]*(c.T[7]-c.Tref_C)-wc8*c.cpg[0]*(c.T[7]-c.Tref_C))
+Qv3 = m8*(h_vap*wh8- CpSol.CpCO2Int(CpSol.cpsol,c.T[8],c.T[7],0) )
 
 Cp8 = wc8*c.cpg[0]+wh8*c.cpg[1]
 h8 = wc8*c.hf[0]+wh8*c.hf[1]+Cp8*(c.T[7]-c.Tref_C)
@@ -90,7 +90,7 @@ H9 = m9*c.hf[0]
 H = [H1,H2,H3,H4,H5,H6,H7,H8,H9]
 h = [H1/c.m1,H2/m2,H3/m3,H4/m4,H5/m5,H6/m6,H7/m7,H8/m8,H9/m9]
 
-Qv4 = Qv3+H9+H6-H5
+Qv4 = Qv3-H9-H6+H5
 Q = [Qv1,Qv2,Qv3,Qv4]
 
 
