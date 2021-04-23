@@ -104,3 +104,4 @@ print("Varmeoverføring:", Q)
 print("---")
 print("Areal:", A)
 
+ 
