@@ -105,3 +105,4 @@ print("---")
 print("Areal:", A)
 
  
+print(((c.T[6]-c.T[10])-(c.T[2]-c.T[9]))/np.log((c.T[6]-c.T[10])/(c.T[2]-c.T[9]))) #dtLN for V2
