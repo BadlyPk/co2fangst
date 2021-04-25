@@ -54,6 +54,8 @@ CO2abs_45 = wc4*m4/c.Mw[0]*1000
 Habs_45 = CO2abs_45*c.habs_m
 
 Qv1 = m4* CpSol.CpCO2Int(CpSol.cpsol,c.T[3]+273,c.T[4]+273,wMEA4)
+# qv1 = m4*( CpSol.Intcpsol(c.T[4]+273,wMEA4) - CpSol.Intcpsol(c.T[3]+273,wMEA4) ) #dersom Qv1 benyttes, husk å bytt tilbake fra qv1-Qv1 overalt..!
+# print(f"qv1{qv1, Qv1}")
 
 def findT7(x_list):
     T7 = x_list[0]
@@ -73,9 +75,12 @@ H6 = enthalpy(c.Tref_C,c.T[5],c.waMEA,wc3,wh3,Habs_367,m3)
 H7 = enthalpy(c.Tref_C,c.T[6],c.waMEA,wc3,wh3,Habs_367,m3)
 
 dt_LN = ((c.T[6]-c.T[3])-(c.T[5]-c.T[4]))/np.log((c.T[6]-c.T[3])/(c.T[5]-c.T[4]))
-A = Qv1*1000/(dt_LN*c.U)
+A = Qv1*1000/(dt_LN*c.U) #byttet ut Qv1 med qv1
 
 Qv2 = m3*CpSol.CpCO2Int(CpSol.cpsol,c.T[6],c.T[2],c.waMEA)
+# qv2 = m3*( CpSol.Intcpsol(c.T[6]+273,c.waMEA) - CpSol.Intcpsol(c.T[2]+273,c.waMEA) ) #dersom Qv2 benyttes, husk å bytt tilbake fra qv2-Qv2 overalt..!
+
+
 
 h_vap = c.dHsub -c.dHfus
 wh8 = 1-wc8
